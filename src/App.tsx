@@ -1,4 +1,4 @@
-import { useEffect, FC } from 'react';
+import { useEffect, type FC } from 'react';
 import { styled, ThemeProvider } from 'styled-components';
 import { Route, Routes } from 'react-router-dom';
 
