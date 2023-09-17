@@ -1,4 +1,4 @@
-import { FC, useRef, useEffect } from 'react';
+import { type FC, useRef, useEffect } from 'react';
 
 import { Blob } from './Blob';
 import { Blur } from './Blur';

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { type FC } from 'react';
 
 import { ListProps } from './types';
 import { Text } from '../../../ui';

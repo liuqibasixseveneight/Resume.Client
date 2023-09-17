@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { type FC } from 'react';
 import { Link } from 'react-scroll';
 
 import { NavigationItemProps } from './types';
@@ -22,7 +22,7 @@ const NavigationItem: FC<NavigationItemProps> = ({
 
   if (hasToAddress) {
     return (
-      <Link spy={true} smooth={true} offset={-78} duration={500} to={to}>
+      <Link spy={true} smooth={true} offset={0} duration={500} to={to}>
         <Wrapper
           key={`${id}-${name}`}
           $type={type}

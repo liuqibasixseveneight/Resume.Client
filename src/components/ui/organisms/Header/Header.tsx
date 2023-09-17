@@ -1,12 +1,16 @@
-import { FC, useState, useEffect } from 'react';
+import { type FC, useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { Wrapper } from './Wrapper';
 import { InnerWrapper } from './InnerWrapper';
-import { Navigation } from '../../../ui';
+import { Navigation, Toggle } from '../../../ui';
 import { navigationItems } from './navigationItems';
-import { getTheme } from '../../../../utils';
+import { getTheme, getIsGlobalThemeDark } from '../../../../utils';
+import { setIsGlobalThemeDark } from '../../../../redux/slices/globalThemeSlice';
 
 const Header: FC = () => {
+  const dispatch = useDispatch();
+
   const [previousScrollPosition, setPreviousScrollPosition] =
     useState<number>(0);
   const [isHeaderVisible, setIsHeaderVisible] = useState<boolean>(true);
@@ -27,12 +31,26 @@ const Header: FC = () => {
     };
   }, [previousScrollPosition]);
 
+  const isGlobalThemeDark = getIsGlobalThemeDark();
   const theme = getTheme();
   const textSecondary = theme?.palette?.secondary?.text;
+  const toggleCheckbox = theme?.palette?.themeToggle?.checkbox;
+  const toggleButton = theme?.palette?.themeToggle?.button;
+
+  const toggleTheme = () => {
+    dispatch(setIsGlobalThemeDark());
+  };
 
   return (
     <Wrapper $isHeaderVisible={isHeaderVisible} $textSecondary={textSecondary}>
       <InnerWrapper>
+        <Toggle
+          id={'header-themeToggle'}
+          isOn={isGlobalThemeDark}
+          handleToggle={toggleTheme}
+          onColor={toggleCheckbox}
+          offColor={toggleButton}
+        />
         <Navigation items={navigationItems} />
       </InnerWrapper>
     </Wrapper>
