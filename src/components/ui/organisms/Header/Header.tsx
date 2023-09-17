@@ -34,6 +34,8 @@ const Header: FC = () => {
   const isGlobalThemeDark = getIsGlobalThemeDark();
   const theme = getTheme();
   const textSecondary = theme?.palette?.secondary?.text;
+  const toggleCheckbox = theme?.palette?.themeToggle?.checkbox;
+  const toggleButton = theme?.palette?.themeToggle?.button;
 
   const toggleTheme = () => {
     dispatch(setIsGlobalThemeDark());
@@ -46,7 +48,8 @@ const Header: FC = () => {
           id={'header-themeToggle'}
           isOn={isGlobalThemeDark}
           handleToggle={toggleTheme}
-          onColor='purple'
+          onColor={toggleCheckbox}
+          offColor={toggleButton}
         />
         <Navigation items={navigationItems} />
       </InnerWrapper>

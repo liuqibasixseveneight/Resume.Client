@@ -1,33 +1,29 @@
 import styled from 'styled-components';
 
-import { ToggleButton } from './ToggleButton';
+import { ToggleLabelProps } from './types';
 
-export const ToggleLabel = styled.label`
+const getBackgroundColor = (
+  isOn: boolean,
+  offColor?: string,
+  onColor?: string
+) => {
+  if (isOn) {
+    return onColor;
+  } else {
+    return offColor;
+  }
+};
+
+export const ToggleLabel = styled.label<ToggleLabelProps>`
   align-items: center;
-  background: #ff5851;
-  border-radius: 100px;
+  background: ${({ $isOn, $offColor, $onColor }) =>
+    getBackgroundColor($isOn, $offColor, $onColor)};
+  border-radius: 50px;
   cursor: pointer;
   display: flex;
-  height: 50px;
+  height: 30px;
   justify-content: space-between;
   position: relative;
-  transition: background-color 0.2s;
-  width: 100px;
-
-  & ${ToggleButton} {
-    background: #fff;
-    border-radius: 45px;
-    box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
-    content: '';
-    height: 45px;
-    left: 2px;
-    position: absolute;
-    top: 2px;
-    transition: 0.2s;
-    width: 45px;
-  }
-
-  &:active ${ToggleButton} {
-    width: 60px;
-  }
+  transition: background-color 100ms;
+  width: 60px;
 `;

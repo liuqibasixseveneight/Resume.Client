@@ -41,4 +41,7 @@ export const Wrapper = styled.li<WrapperProps>`
   transition: all 100ms linear;
   ${({ $type, $backgroundPrimary, $textPrimary }) =>
     getTypeStyles($type, $backgroundPrimary, $textPrimary)};
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 `;
