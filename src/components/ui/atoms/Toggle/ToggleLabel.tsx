@@ -1,0 +1,33 @@
+import styled from 'styled-components';
+
+import { ToggleButton } from './ToggleButton';
+
+export const ToggleLabel = styled.label`
+  align-items: center;
+  background: #ff5851;
+  border-radius: 100px;
+  cursor: pointer;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  position: relative;
+  transition: background-color 0.2s;
+  width: 100px;
+
+  & ${ToggleButton} {
+    background: #fff;
+    border-radius: 45px;
+    box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+    content: '';
+    height: 45px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    transition: 0.2s;
+    width: 45px;
+  }
+
+  &:active ${ToggleButton} {
+    width: 60px;
+  }
+`;
