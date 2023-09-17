@@ -16,7 +16,7 @@ const App: FC = () => {
   const isGlobalThemeDark = getIsGlobalThemeDark();
 
   useEffect(() => {
-    localStorage.setItem('isDarkTheme', JSON.stringify(isGlobalThemeDark));
+    localStorage.setItem('dark', JSON.stringify(isGlobalThemeDark));
   }, [isGlobalThemeDark]);
 
   return (
