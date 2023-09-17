@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { type FC } from 'react';
 import { Link } from 'react-scroll';
 
 import { NavigationItemProps } from './types';

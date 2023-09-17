@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { type FC } from 'react';
 
 import { About, Contact, Home, Portfolio } from '../../pages';
 import { Footer, Header } from '../../ui';

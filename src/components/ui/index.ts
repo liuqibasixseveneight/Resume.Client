@@ -5,6 +5,7 @@ import {
   SectionContent,
   SectionTitle,
   Text,
+  Toggle,
 } from './atoms';
 import { Navigation } from './molecules';
 import { Footer, Header, Section } from './organisms';
@@ -20,4 +21,5 @@ export {
   SectionContent,
   SectionTitle,
   Text,
+  Toggle,
 };

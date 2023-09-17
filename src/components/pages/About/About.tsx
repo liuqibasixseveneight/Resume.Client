@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { type FC } from 'react';
 
 import { Section } from '../../ui';
 import { AboutSectionContent } from '../../modules';

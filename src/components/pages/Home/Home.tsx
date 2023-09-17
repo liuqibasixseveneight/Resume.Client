@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { type FC } from 'react';
 
 import { Wrapper } from './Wrapper';
 import { HomeHero } from '../../modules';
